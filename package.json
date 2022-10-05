@@ -2,10 +2,12 @@
   "name": "observable",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "postinstall": "npx tsc ./index.ts --outDir ./dist"
   },
   "repository": {
     "type": "git",
