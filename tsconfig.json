@@ -1,3 +1,8 @@
 {
-  "compilerOptions": {}
+  "compilerOptions": {
+    "declaration": true,
+    "resolveJsonModule": true
+  },
+  "include": ["./src"],
+  "exclude": ["node_modules", "dist", "/__tests__/*"]
 }
