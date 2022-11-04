@@ -25,6 +25,10 @@ class Observable<T> {
     return this.value;
   }
 
+  public update(updater: Updater<T>): void {
+    this.set(updater(this.value));
+  }
+
   private notify(next: T): void {
     this.subscriptions.forEach((subscription) => {
       subscription(next);
@@ -32,6 +36,7 @@ class Observable<T> {
   }
 }
 
+export type Updater<T> = (prev: T) => T;
 export type Subscription<T> = (next: T) => void;
 
 export default Observable;
